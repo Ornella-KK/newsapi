@@ -1,20 +1,20 @@
 import unittest
-from models import article
-Article = article.Article
+from models import source
+Source = source.Source
 
-class ArticleTest(unittest.TestCase):
+class SourceTest(unittest.TestCase):
     '''
-    Test Class to test the behaviour of the Movie class
+    Test Class to test the behaviour of the source class
     '''
 
     def setUp(self):
         '''
         Set up method that will run before every Test
         '''
-        self.new_article = Article('abc-news','ABC News','Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com.','https://abcnews.go.com','general','english','USA')
+        self.new_source = Sourcee('abc-news','ABC News','Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com.','https://abcnews.go.com','general','english','USA')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_article,Article))
+        self.assertTrue(isinstance(self.new_source,Source))
 
 
 if __name__ == '__main__':
