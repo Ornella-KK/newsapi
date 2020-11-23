@@ -12,8 +12,8 @@
         <!-- Popular movie section  -->
         <h3> Popular News</h3>
          <ul>
-            {% for popular_sources in popular %}
-                <li>{{ popular_sources.title}}</li>
+            {% source in popular %}
+                <li>{{ source.title}}</li>
             {% endfor %}
         </ul>
     </body>
