@@ -16,13 +16,13 @@ def get_source():
     get_source_url = base_url.format(api_key)
 
     with urllib.request.urlopen(get_source_url) as url:
-        get_sources_data = url.read()
-        get_sources_response = json.loads(get_sources_data)
+        get_source_data = url.read()
+        get_source_response = json.loads(get_source_data)
 
         source_results = None
 
-        if get_sources_response['sources']:
-            source_results_list = get_sources_response['sources']
+        if get_source_response['sources']:
+            source_results_list = get_source_response['sources']
             source_results = process_results(source_results_list)
 
 
@@ -33,11 +33,14 @@ def get_source():
 
     
         source_results = []
-        for source_item in source_list:
+        for item in source_result_list:
             id = source_item.get('id')
             name = source_item.get('name')
             description = source_item.get('description')
             url = source_item.get('url')
+            category = source_item.get('category')
+            language = source_item.get('language')
+            country = source_item.get('country')
 
         if id:
             source_object = Source(id,name,description,url)
