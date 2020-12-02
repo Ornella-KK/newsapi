@@ -2,7 +2,7 @@
 {% for news in news_list %}
 
 <link rel="stylesheet" href="https://fonts.google.com/specimen/Nunito" type="text/css">
-<div class=" card col-md-2 pt-2" style="font-family: Nunito;background-color: #C0EDE7;">
+<div class=" card col-md-2 pt-2" style="font-family: Nunito;background-color:#faedf6;">
     <a href="/news/{{news.id}}">{{news.name}}</a>
 </div>
 {% endfor %}
@@ -20,7 +20,7 @@
                 <p class="card-text">{{news.description}}</p>
                 <p class="card-text"><strong>Written by:</strong> {{news.author}}</p>
                 <p class="card-text"><strong>Published On:</strong> {{news.publishedAt}}</p>
-                <a href="{{news.url}}" class="btn btn-secondary" style="background-color: grey;color: whitesmoke;font-size: 15px;">Continue...</a>
+                <a href="{{news.url}}" class="btn btn-secondary" style="background-color: grey;color: whitesmoke;font-size: 15px;">Read...</a>
             </div>
         </div>
  
