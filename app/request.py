@@ -1,14 +1,14 @@
 from app import app
 import urllib.request,json
 from .models import source,article
-News_Source=source.News_Source
-News_Article=article.News_Article
+Source=source.Source
+Article=article.Article
 
 # Getting api key
-api_key = app.config['SOURCE_API_KEY']
+apiKey = app.config['SOURCE_API_KEY']
 
 
-#Getting the movie base url
+#Getting the news base url
 base_url=app.config['SOURCE_API_BASE_URL']
 article_url=app.config['ARTICLE_API_BASE_URL']
 
@@ -16,7 +16,7 @@ def get_sources(category):
     
     #Function that gets json response to our url request
     
-    get_sources_url = base_url.format(category,api_key)
+    get_sources_url = base_url.format(category,apiKey)
     print(get_sources_url)
 
     with urllib.request.urlopen(get_sources_url) as url:
@@ -27,10 +27,10 @@ def get_sources(category):
 
         if get_sources_response['sources']:
             sources_results_list = get_sources_response['sources']
-            sources_results = process_sources(sources_results_list)
+            sources_results = process_results(sources_results_list)
     return sources_results
 
-def process_sources(sources_list):
+def process_results(sources_list):
     '''
     function that processes the news results and transform them to a list of objects
     Args:
@@ -42,12 +42,13 @@ def process_sources(sources_list):
     for sources_item in sources_list:
         id = sources_item.get('id')
         name = sources_item.get('name')
+        description = sources_item.get('description')
         url = sources_item.get('url')
         category = sources_item.get('category')
 
 
         if id:
-            sources_object = News_Source(id,name,url,category)
+            sources_object =Source(id,name,description,url,category)
 
             sources_results.append(sources_object)
     return sources_results
@@ -70,9 +71,7 @@ def get_articles(id):
     return article_results
 
 def process_articles(articles_list):
-    
-    #process the dictionary and output a list of objects
-    
+        
     article_results = []
     source_dictionary = {}
     for result in articles_list:
@@ -89,7 +88,7 @@ def process_articles(articles_list):
         publishedAt=result.get('publishedAt')
         if urlToImage:
             print (id)
-            article_object = News_Article(id,name,author,title,description,url,urlToImage,publishedAt)
+            article_object =Article(id,name,author,title,description,url,urlToImage,publishedAt)
 
             article_results.append(article_object)
 
