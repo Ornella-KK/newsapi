@@ -1,4 +1,4 @@
-class News_Article:
+class Article:
     
     #newsarticle class to define article objects
     
