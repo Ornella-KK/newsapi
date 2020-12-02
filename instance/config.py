@@ -1,1 +1,1 @@
-SOURCE_API_KEY = '<fe0a9c58ba8b47eeb8d39402f5ca91fc>'
+SOURCE_API_KEY = 'fe0a9c58ba8b47eeb8d39402f5ca91fc'
