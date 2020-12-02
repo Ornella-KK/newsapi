@@ -14,7 +14,6 @@ class ProdConfig(Config):
     '''
     pass
 
-
 class DevConfig(Config):
     '''
     Development  configuration child class
@@ -25,5 +24,5 @@ class DevConfig(Config):
     SOURCE_API_BASE_URL ='https://newsapi.org/v2/sources?category={}&apiKey={}'
     ARTICLE_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
 
-
     DEBUG = True
+
