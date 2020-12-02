@@ -12,11 +12,9 @@ def home():
     general = get_sources('general')
     entertainment = get_sources('entertainment')
     business = get_sources('business')
-    health = get_sources('health')
     sports = get_sources('sports')
-    technology = get_sources('technology')
 
-    return render_template('index.html',general=general,entertainment=entertainment,health=health,technology=technology,business=business,sports=sports)
+    return render_template('index.html',general=general,entertainment=entertainment,business=business,sports=sports)
 
 @app.route('/aricle/<id>')
 def news(id):
