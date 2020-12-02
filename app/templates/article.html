@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+
+<link rel="stylesheet" href="https://fonts.google.com/specimen/Nunito" type="text/css">
+{% block content %}
+<div class="container-fluid" style="font-family: Nunito;background-color: #C0EDE7;">
+        <p>{{ macro.displayArticleList(articles) }}</p>
+</div>
+{% endblock %}
